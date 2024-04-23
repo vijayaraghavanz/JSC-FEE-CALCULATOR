@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fees calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./header.css">
+  </head>
+  <body>
+    <div
+      class="container"
+      data-aos="fade-down"
+      data-aos-delay="300"
+      data-aos-duration="1100"
+    >
+      <div class="logo">
+        <img src="./img/logo.jpg" width="90px" />
+      </div>
+      <h1>FEES CALCULATOR SYSTEM </h1>
+      <div class="clg_logo">
+        <img src="./img/clg logo.png" width="90px" />
+      </div>
+    </div>
+    <form action="">
+      <label for="appType">SELECT THE APPLICATION TYPE</label>
+      <select name="appType" id="appType">
+        <option value="none">Select Application Type</option>
+        <option value="provisional">Provisional</option>
+        <option value="complete">Complete</option>
+        <option value="renewal">Renewal</option>
+      </select>
+      <div class="btn-wrapper">
+        <button type="submit" class="submit">Submit</button>
+        <button type="reset" class="clr">Clear</button>
+      </div>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  /* flex: auto; */
+  margin-right: 10px;
+  /* padding-right: 130px; */
+}
+.clg_logo {
+  /* flex: auto; */
+  margin-right: 40px;
+  /* width: 40px; */
+  /* padding-left: 290px; */
+}
+@media screen and (max-width: 697px) {
+  h1 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}

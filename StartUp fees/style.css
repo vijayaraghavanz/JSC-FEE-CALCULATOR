@@ -1,0 +1,56 @@
+form{
+    width: 400px;
+    border: 1px solid gray;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+form label{
+    font-size: 1.2em;
+    margin: 24px 0 0 0;
+}
+form select{
+    padding: 12px 16px;
+    font-size: 1.1em;
+    margin: 30px 0;
+}
+form select option{
+    background-color: white;
+    font-size: 1.1rem;
+
+}
+.btn-wrapper{
+    /* outline: 1px solid red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-wrapper button{
+    padding: 12px 16px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid white;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    transition: .3s ease-out;
+}
+
+.btn-wrapper button:hover{
+    border-color: black;
+    background-color: #fff;
+    color: black;
+    transition: .3s ease-in;
+}
+@media screen and (max-width:550px){
+    form{
+        width:80%;
+    }
+    form label{
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete</title>
+    <link rel="stylesheet" href="./header.css">
+    <style>
+        .fees-data{
+            height: 70%;
+        }
+        .ques-wrapper{
+            display: flex;
+            /* outline: 1px solid; */
+            padding: 4px 12px;
+            align-items: center;
+            justify-content: baseline;
+            gap: 10px;
+        }
+        .btn-wrapper{
+            display: flex;
+            gap: 10px;
+        }
+        .ans-wrapper{
+            margin: 20px 0 0 0;
+        }
+        .btn-wrapper button{
+            padding: 8px 12px;
+            font-size: 1.1em;
+            border: 1px solid black;
+            background-color: transparent;
+            cursor: pointer;
+            transition: .2s ease-in;
+        }
+        .btn-wrapper button:active{
+            background: #000;
+            color: white;
+            transition: .2s ease-out;
+        }
+
+        @media screen and (max-width: 550px) {
+        .fees-data {
+          width: 80%;
+          font-size: 1em;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div
+    class="container"
+    data-aos="fade-down"
+    data-aos-delay="300"
+    data-aos-duration="1100"
+  >
+    <div class="logo">
+      <img src="./img/logo.jpg" width="90px" />
+    </div>
+    <h1>FEES CALCULATOR SYSTEM </h1>
+    <div class="clg_logo">
+      <img src="./img/clg logo.png" width="90px" />
+    </div>
+  </div>
+
+  <div class="fees-data">
+    <h3>Please select</h3>
+    <div class="ques-wrapper">
+        <h3>Do you want to expedite the economy?</h3>
+        <div class="btn-wrapper">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+    </div>
+    <div class="ans-wrapper">
+        <h3 class="h3-ans"></h3>
+        <br>
+        <center><h4 class="h4-ans"></h4></center>
+    </div>
+  </div>
+
+  <script>
+    const h3Ans = document.querySelector(".h3-ans")
+    const h4Ans = document.querySelector(".h4-ans")
+    document.querySelector(".yes").addEventListener("click",()=>{
+        h3Ans.innerHTML = 'The fee for provisional application with expedite economic is : Rs.8400'
+        h4Ans.innerHTML = 'Hope it helps !!!'
+    })
+    document.querySelector(".no").addEventListener("click",()=>{
+        h3Ans.innerHTML = 'The fee for provisional application without expedite economic is : Rs.4600'
+        h4Ans.innerHTML = 'Hope it helps !!!'
+    })
+  </script>
+</body>
+</html>
+
+<!-- This fee for provisional application is : Rs.1600 -->
+<!-- Hope it helps !!! -->

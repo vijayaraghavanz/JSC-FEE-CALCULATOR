@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renewal</title>
+    <link rel="stylesheet" href="./header.css" />
+    <style>
+      .fees-data {
+        height: 70%;
+      }
+
+      @media screen and (max-width: 550px) {
+        .fees-data {
+          width: 80%;
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      data-aos="fade-down"
+      data-aos-delay="300"
+      data-aos-duration="1100"
+    >
+      <div class="logo">
+        <img src="./img/logo.jpg" width="90px" />
+      </div>
+      <h1>FEES CALCULATOR SYSTEM</h1>
+      <div class="clg_logo">
+        <img src="./img/clg logo.png" width="90px" />
+      </div>
+    </div>
+    <div class="fees-data">
+      <div class="date-wrapper">
+        <label for="appDate">Date of Application</label>
+        <input type="date" />
+        <br />
+        <br />
+        <h4>Number of years : <span>Select The date</span></h4>
+      </div>
+      <br><br>
+      <div class="fees-structure">
+        
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const dateObj = document.querySelector("input");
+    const span = document.querySelector("span");
+    const feesStructure = document.querySelector(".fees-structure")
+    dateObj.addEventListener("change", () => {
+      // console.log(dateObj.value.slice(0,4));
+      const date = new Date();
+      const oldDate = dateObj.value.slice(0, 4) - 0;
+      const newDate = date.getFullYear();
+      const finalDate = newDate - oldDate;
+      if (finalDate < 0) {
+        span.innerHTML = `Choose date before ${getCurrentDateFormatted(date)}`;
+        return;
+      }
+      if (finalDate <=3){
+        feesStructure.innerHTML = `<p>First three years free</p>
+        <p>4<sup>th</sup> - 7<sup>th</sup> year : Rs. 4000</p>
+        <p>8<sup>th</sup> - 15<sup>th</sup> year : Rs. 12,000</p>
+        <p>16<sup>th</sup> - 20<sup>th</sup> year : Rs. 20,000</p>
+        <h3>Your Renewal Fees is : Rs. <span>0</span></h3>`
+      }
+      else if (finalDate >3 && finalDate <= 7){
+        feesStructure.innerHTML = `<p>First three years free</p>
+        <p>4<sup>th</sup> - 7<sup>th</sup> year : Rs. 4000</p>
+        <p>8<sup>th</sup> - 15<sup>th</sup> year : Rs. 12,000</p>
+        <p>16<sup>th</sup> - 20<sup>th</sup> year : Rs. 20,000</p>
+        <h3>Your Renewal Fees is : Rs. <span>4000</span></h3>`
+      }
+      else if (finalDate >7 && finalDate <= 15){
+        feesStructure.innerHTML = `<p>First three years free</p>
+        <p>4<sup>th</sup> - 7<sup>th</sup> year : Rs. 4000</p>
+        <p>8<sup>th</sup> - 15<sup>th</sup> year : Rs. 12,000</p>
+        <p>16<sup>th</sup> - 20<sup>th</sup> year : Rs. 20,000</p>
+        <h3>Your Renewal Fees is : Rs. <span>12,000</span></h3>`
+      }
+      else if (finalDate >15 && finalDate <= 20){
+        feesStructure.innerHTML = `<p>First three years free</p>
+        <p>4<sup>th</sup> - 7<sup>th</sup> year : Rs. 4000</p>
+        <p>8<sup>th</sup> - 15<sup>th</sup> year : Rs. 12,000</p>
+        <p>16<sup>th</sup> - 20<sup>th</sup> year : Rs. 20,000</p>
+        <h3>Your Renewal Fees is : Rs. <span>20,000</span></h3>`
+      }
+      span.innerHTML = finalDate;
+      
+    });
+    function getCurrentDateFormatted() {
+      const currentDate = new Date();
+      var day = currentDate.getDate();
+      var month = currentDate.getMonth() + 1; // Note: January is 0
+      var year = currentDate.getFullYear();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+      var formattedDate = day + "/" + month + "/" + year;
+      return formattedDate;
+    }
+
+    console.log(getCurrentDateFormatted()); // Output: e.g., 14/04/2024
+  </script>
+</html>
